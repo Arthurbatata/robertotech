@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Roberto Tech</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .container img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    #chat-container {
+      width: 400px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+
+    #tab-container {
+      display: flex;
+      background-color: #f2f2f2;
+    }
+    
+    .tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      background-color: #ddd;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    .tab:hover {
+      background-color: #e6e6e6;
+    }
+    
+    .tab.active {
+      background-color: #fff;
+      font-weight: bold;
+    }
+    
+    #message-container {
+      min-height: 200px;
+      padding: 10px;
+      background-color: #fff;
+    }
+    
+    .chat {
+      display: none;
+      padding: 10px;
+    }
+    
+    .chat.active {
+      display: block;
+    }
+    
+    .chat-message {
+      margin-bottom: 10px;
+    }
+    
+    .user-message {
+      background-color: #e2f0cb;
+    }
+    
+    .bot-message {
+      background-color: #b4d7ea;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="tab-container">
+      <div class="tab active" onclick="changeChat(1)">Início</div>
+      <div class="tab" onclick="changeChat(2)">Progamação</div>
+      <div class="tab" onclick="changeChat(3)">Random </div>
+    </div>
+    <div id="message-container">
+      <div id="chat-1" class="chat active">
+        <div class="chat-message user-message">
+          <div class="container">
+            <a href="https://www.twitter.com/arthurbatataa">
+              <img src="https://media.discordapp.net/attachments/922849235563585646/1123402246198132826/FzLlIANXgAEwdoc.png?width=506&height=580" alt="tmj">
+            </a>
+          </div>
+        </div>
+        <div class="chat-message bot-message">
+          Basicamente, é só um site que fiz de zoas.
+          Fica vendo ó
+        </div>
+      </div>
+      <div id="chat-2" class="chat">
+        <div class="chat-message user-message">
+          <div class="container">
+            <a href="https://www.instagram.com/arthur.batataa">
+              <img src="https://media.discordapp.net/attachments/1087888709124366440/1127305950924111984/image.png?width=1440&height=557" alt="tmj">
+            </a>
+          </div>
+        </div>
+        <div class="chat-message bot-message">
+          Imagem da produção deste site
+        </div>
+      </div>
+      <div id="chat-3" class="chat">
+        <div class="chat-message user-message">
+          <div class="container">
+            <a href="https://www.youtube.com">
+              <img src="https://media.discordapp.net/attachments/1052765373528805417/1127305717523681290/18954fb0-2fee-4e40-98b3-995387f23366.png?width=770&height=580" alt="tmj">
+            </a>
+          </div>
+          É basicamente isso, foi simples, só fiz para ter conhecimento bom em HTML.
+        </div>
+        <div class="chat-message bot-message">
+          É isso, tmj 👍
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function changeChat(chatNumber) {
+      var currentActiveTab = document.querySelector('.tab.active');
+      var currentActiveChat = document.querySelector('.chat.active');
+      currentActiveTab.classList.remove('active');
+      currentActiveChat.classList.remove('active');
+
+      var selectedTab = document.querySelector('#tab-container .tab:nth-child(' + chatNumber + ')');
+      var selectedChat = document.querySelector('#message-container .chat:nth-child(' + chatNumber + ')');
+      selectedTab.classList.add('active');
+      selectedChat.classList.add('active');
+    }
+  </script>
+</body>
+</html>
